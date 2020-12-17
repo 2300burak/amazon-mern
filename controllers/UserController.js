@@ -78,15 +78,15 @@ exports.userLogin = async (req, res) => {
             if (err) {
               return res.status(400).json({ errors: [{ message: "Unknown Error" }] });
             }
-            res.status(202).json({ token });
+            return res.status(202).json({ token });
           }
         );
-        res.send("LoginPage")
+        // res.send(token)
       };
     
 
 
 
-exports.getCheckout= async(req,res)=>{
-    res.send("CheckoutPage")
+exports.getProfile= async(req,res)=>{
+    res.send(req.decodedUser)
 }
